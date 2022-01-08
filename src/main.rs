@@ -58,8 +58,8 @@ struct Args {
 
 /*
 Possible future features/flags:
-  --recursive
-  --nopng, --nojpg, ...
+  --recursive (also crop images in subfolders)
+  --nopng, --nojpg, ... (do not crop images of certain file types)
   --fliphorizontal
   --flipvertical
   --rotate90left
@@ -67,8 +67,13 @@ Possible future features/flags:
   --rotate180
   --grayscale, --invertcolors, --blur, --brighten, ... (https://docs.rs/crate/image/0.23.14)
   --keeporiginals
-  --regexfilter
-  --destination
+  --regexfilter (only crop image files whose name matches a certain regex pattern)
+  --destination (put the cropped images into a separate folder instead of replacing them)
+  --minheight, --minwidth (only crop images with a certain minimum size, in pixels)
+  --maxheight, --maxwidth (only crop images up to a certain maximum size, in pixels)
+  --shrink (shrink image instead of cropping it; x1/y2 attributes are ignored when width/height attributes are given)
+  --outformat (also convert all images into a certain format in addition to cropping them)
+  --nocrop (do not crop; only useful when an argument for one of the other tools is given)
  */
 
 /// For a full list see `https://github.com/image-rs/image/blob/master/README.md`.
